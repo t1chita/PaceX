@@ -10,14 +10,15 @@ import SwiftUI
 final class NavigationManager: ObservableObject {
     @Published var navPath = NavigationPath()
 
-    public enum Destination: Codable, Hashable {
+    public enum Destination: Hashable {
         case mainFlow
+        case quizPage(quiz: Quiz)
+        case resultPage
     }
     
     
     // Function to navigate to a specific destination
     func navigate(to destination: Destination) {
-        print("Navigating to \(destination)") // Add this to ensure it's alive
         navPath.append(destination)
     }
     

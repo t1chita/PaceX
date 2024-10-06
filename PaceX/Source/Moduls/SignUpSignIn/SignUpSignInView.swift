@@ -10,6 +10,8 @@ import SwiftUI
 struct SignUpSignInView: View {
     @EnvironmentObject var router: NavigationManager
     @StateObject var signUpSignInViewModel = SignUpSignInViewModel()
+    @AppStorage(UserDefaults.Keys.USER_LOGGED_IN) var isUserLoggedIn: Bool = false
+
     var body: some View {
         ZStack {
             Color
@@ -55,6 +57,7 @@ struct SignUpSignInView: View {
                              height: 40,
                              padding: 0) {
                         router.navigate(to: .mainFlow)
+                        isUserLoggedIn = true
                     }
                 } else {
                     VStack(spacing: 16) {
@@ -116,6 +119,7 @@ struct SignUpSignInView: View {
                                  padding: 0) {
                             signUpSignInViewModel.signUpUser {
                                 router.navigate(to: .mainFlow)
+                                isUserLoggedIn = true
                             }
                         }
                     }

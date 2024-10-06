@@ -13,5 +13,5 @@ struct User {
     let lastName: String
     let age: String
     let email: String
-    let points: Int
+    var points: Int
 }

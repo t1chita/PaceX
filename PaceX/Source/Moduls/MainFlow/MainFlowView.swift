@@ -23,22 +23,18 @@ struct MainFlowView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            BlogView()
+            SatelliteView()
                 .tag(2)
+                .tabItem {
+                    Label("Satellite", systemImage: "moon.stars")
+                }
+            BlogView()
+                .tag(3)
                 .tabItem {
                     Label("Blog", systemImage: "doc.text")
                 }
-            EscapeRoomView()
-                .tag(3)
-                .tabItem {
-                    Label("Escape Room", systemImage: "puzzlepiece")
-                }
-            ProfileView()
-                .tag(4)
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
         }
+        .navigationBarBackButtonHidden()
     }
     
     func setupTabBarAppearance() {

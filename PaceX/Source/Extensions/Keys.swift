@@ -11,5 +11,6 @@ import Foundation
 extension UserDefaults {
     struct Keys {
         static let APP_SHOWED_ONBOARDING = "APP_SHOWED_ONBOARDING" 
+        static let USER_LOGGED_IN = "USER_LOGGED_IN" 
     }
 }

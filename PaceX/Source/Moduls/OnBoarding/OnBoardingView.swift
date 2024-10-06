@@ -19,7 +19,7 @@ struct OnBoardingView: View {
     var body: some View {
         ZStack {
             Color
-                .mainBlueColorLighter
+                .white
                 .ignoresSafeArea()
             
             GifImage(name: "rocket")
@@ -36,8 +36,10 @@ struct OnBoardingView: View {
                     .frame(width: 200, height: 200)
                     .cornerRadius(12)
                 
-                Text("Introduction")
-                    .font(.title)
+                PXText(title: "Welcome, scientist! NASA needs your help with the PACE mission! This mission is all about studying the oceans, clouds, and tiny particles in the air. Are you ready to help us learn more about our planet? Let’s go!",
+                       fontSize: 14,
+                       color: .mainBlueColorDark,
+                       fontType: .regular) { }
             }
             VStack {
                 Spacer()
